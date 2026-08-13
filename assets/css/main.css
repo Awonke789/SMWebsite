@@ -11491,3 +11491,25 @@ input.main-search-input::placeholder {
     right: 8px !important;
   }
 }
+
+
+/* Media spotlight video: mobile-first native video presentation. */
+@media (max-width: 576px) {
+  .spotlight-video {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #000 !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+
+  .spotlight-video video {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: contain !important;
+    background: #000 !important;
+  }
+}
