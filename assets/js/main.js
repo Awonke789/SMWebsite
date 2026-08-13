@@ -1,7 +1,36 @@
 (function ($) {
 	("use strict");
 
-	// Mobile navigation is handled by the responsive CSS in main.css.
+	// Hamburger mobile navigation for all pages.
+	$(document).on("click", ".mobile-nav-toggle", function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var $toggle = $(this);
+		var $header = $toggle.closest(".header__main");
+		var isOpen = $header.hasClass("mobile-nav-open");
+		$header.toggleClass("mobile-nav-open", !isOpen);
+		$toggle.attr("aria-expanded", !isOpen ? "true" : "false");
+		$toggle.attr("aria-label", !isOpen ? "Close navigation menu" : "Open navigation menu");
+	});
+	$(document).on("click", ".header__main #site-navigation .dropdown-toggle", function (e) {
+		if (window.innerWidth <= 991) {
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).closest(".dropdown").toggleClass("mobile-submenu-open");
+		}
+	});
+	$(document).on("click", function (e) {
+		if (window.innerWidth <= 991 && !$(e.target).closest(".header__main").length) {
+			$(".header__main").removeClass("mobile-nav-open");
+			$(".mobile-nav-toggle").attr({"aria-expanded":"false", "aria-label":"Open navigation menu"});
+		}
+	});
+	$(window).on("resize", function () {
+		if (window.innerWidth > 991) {
+			$(".header__main").removeClass("mobile-nav-open");
+			$(".mobile-nav-toggle").attr({"aria-expanded":"false", "aria-label":"Open navigation menu"});
+		}
+	});
 
 	$(".side-info-close,.offcanvas-overlay").on("click", function () {
 		$(".side-info").removeClass("info-open");
