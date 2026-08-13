@@ -12561,3 +12561,44 @@ input.main-search-input::placeholder {
     -webkit-text-fill-color: #ffffff !important;
   }
 }
+
+
+/* Final mobile hamburger alignment and quote-arrow colors. */
+@media (max-width: 991px) {
+  .header__main > .container > .row {
+    align-items: center !important;
+  }
+
+  .header__main > .container > .row > .col-xl-2,
+  .header__main > .container > .row > .col-xl-10 {
+    top: 0 !important;
+    height: 78px !important;
+    align-items: center !important;
+  }
+
+  .header__main .logo {
+    align-items: center !important;
+    padding-top: 0 !important;
+  }
+
+  .header__main .mobile-nav-toggle {
+    align-self: center !important;
+    width: 56px !important;
+    height: 46px !important;
+  }
+
+  .header__main .mobile-nav-toggle span {
+    width: 26px !important;
+    height: 3px !important;
+  }
+
+  #site-navigation .mobile-quote-item a {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  #site-navigation .mobile-quote-item a i {
+    color: #040021 !important;
+    -webkit-text-fill-color: #040021 !important;
+  }
+}
