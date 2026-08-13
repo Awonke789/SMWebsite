@@ -12481,3 +12481,49 @@ input.main-search-input::placeholder {
     max-height: calc(100vh - 142px) !important;
   }
 }
+
+
+/* Final mobile top-bar overlap adjustment. */
+@media (max-width: 991px) {
+  .header__top .header-cta > ul > li {
+    padding: 0 1px !important;
+  }
+
+  .header__top .cta__icon {
+    width: 26px !important;
+    min-width: 26px !important;
+    margin-right: 3px !important;
+  }
+
+  .header__top .cta__icon span {
+    width: 26px !important;
+    height: 26px !important;
+    line-height: 26px !important;
+  }
+
+  .header__top .cta__icon span i {
+    font-size: 16px !important;
+  }
+
+  .header__top .cta__content p,
+  .header__top .cta__content span,
+  .header__top .cta__content a {
+    font-size: 9px !important;
+    line-height: 12px !important;
+  }
+
+  .header__top .grb__social ul {
+    gap: 0 !important;
+  }
+
+  .header__top .grb__social ul li,
+  .header__top .grb__social ul li a {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .header__top .grb__social ul li a {
+    font-size: 13px !important;
+    line-height: 30px !important;
+  }
+}
