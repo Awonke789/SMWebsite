@@ -29,6 +29,26 @@ document.addEventListener('DOMContentLoaded', function () {
     error.hidden = true;
   }
 
+  function isValidEmailAddress(value) {
+    var parts = value.split('@');
+    if (parts.length !== 2) return false;
+
+    var localPart = parts[0];
+    var domain = parts[1].toLowerCase();
+    if (!localPart || !domain || localPart.length > 64 || value.length > 254) return false;
+    if (/\s/.test(value) || localPart.charAt(0) === '.' || localPart.slice(-1) === '.' || localPart.indexOf('..') !== -1) return false;
+    if (!/^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+$/.test(localPart)) return false;
+
+    var labels = domain.split('.');
+    if (labels.length < 2 || labels.some(function (label) { return !label; })) return false;
+    if (labels.some(function (label) {
+      return label.length > 63 || !/^[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?$/.test(label);
+    })) return false;
+
+    var topLevelDomain = labels[labels.length - 1];
+    return /^[A-Za-z]{2,63}$/.test(topLevelDomain);
+  }
+
   function validate() {
     var valid = true;
     Object.keys(fields).forEach(function (key) {
@@ -41,9 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     var emailValue = fields.email.value.trim();
-    var emailPattern = /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/;
-    var hasConsecutiveDots = emailValue.indexOf('..') !== -1;
-    if (emailValue && (!emailPattern.test(emailValue) || hasConsecutiveDots)) {
+    if (emailValue && !isValidEmailAddress(emailValue)) {
       setError(fields.email, 'Please enter a valid email address with a valid domain, for example name@company.co.za.');
       valid = false;
     }

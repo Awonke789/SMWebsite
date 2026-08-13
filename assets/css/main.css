@@ -12803,3 +12803,63 @@ input.main-search-input::placeholder {
     font-size: 25px;
   }
 }
+
+
+/* Contact page balance: slightly narrower information panel and a modest column gap. */
+@media (min-width: 992px) {
+  .contact-area .row.wow {
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+
+  .contact-area .row.wow > .col-lg-4 {
+    flex: 0 0 calc(28% - 15px);
+    max-width: calc(28% - 15px);
+  }
+
+  .contact-area .row.wow > .col-lg-8 {
+    flex: 0 0 calc(72% - 15px);
+    max-width: calc(72% - 15px);
+  }
+
+  .contact-area .contact-form {
+    margin-left: 0;
+  }
+}
+
+.contact-form .ajax-response.sending {
+  color: #0c9ed0;
+  font-weight: 600;
+}
+
+.contact-form .ajax-response.success {
+  color: #218739;
+  font-weight: 600;
+}
+
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+
+/* Final Contact balance: restore the original desktop widths and shorten the left panel. */
+@media (min-width: 992px) {
+  .contact-area .row.wow > .col-lg-4 {
+    flex: 0 0 calc(33.333333% - 15px) !important;
+    max-width: calc(33.333333% - 15px) !important;
+  }
+
+  .contact-area .row.wow > .col-lg-8 {
+    flex: 0 0 calc(66.666667% - 15px) !important;
+    max-width: calc(66.666667% - 15px) !important;
+  }
+
+  .contact-area .contact-address {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: flex-start !important;
+    padding-top: 34px !important;
+    padding-bottom: 28px !important;
+  }
+}
