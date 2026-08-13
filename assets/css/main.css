@@ -12612,3 +12612,16 @@ input.main-search-input::placeholder {
     z-index: 20 !important;
   }
 }
+
+
+/* Remove the mobile divider beneath the logo and hamburger row. */
+@media (max-width: 991px) {
+  .header__main,
+  .header__main::before,
+  .header__main::after,
+  .header__main > .container,
+  .header__main > .container > .row {
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+}
