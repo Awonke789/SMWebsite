@@ -12021,3 +12021,92 @@ input.main-search-input::placeholder {
     max-height: calc(100vh - 132px) !important;
   }
 }
+
+
+/* Final mobile desktop-style header treatment. */
+@media (max-width: 991px) {
+  .header__top .cta__icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 16px !important;
+    min-width: 16px !important;
+    margin-right: 3px !important;
+    color: #0c9ed0 !important;
+    font-size: 10px !important;
+  }
+
+  .header__top .cta__content {
+    text-align: left !important;
+  }
+
+  .header__top .cta__content p,
+  .header__top .cta__content span,
+  .header__top .cta__content a {
+    font-size: 8px !important;
+    line-height: 12px !important;
+  }
+
+  .header__main .logo-bg-1 {
+    top: 0 !important;
+    left: -20px !important;
+    width: 204px !important;
+    height: 59px !important;
+    overflow: visible !important;
+  }
+
+  .header__main .logo-bg-1 img {
+    width: 204px !important;
+    height: 59px !important;
+    max-width: none !important;
+    object-fit: contain !important;
+  }
+
+  .header__main .logo {
+    position: relative !important;
+    z-index: 5 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 78px !important;
+    padding-left: 22px !important;
+  }
+
+  .header__main .logo-text-black img {
+    max-width: 98px !important;
+  }
+
+  .header__main .mobile-nav-toggle {
+    position: relative !important;
+    z-index: 20 !important;
+    width: 74px !important;
+    height: 58px !important;
+    border-radius: 4px !important;
+    background: #109fca !important;
+    box-shadow: none !important;
+  }
+
+  .header__main .mobile-nav-toggle span {
+    width: 34px !important;
+    height: 4px !important;
+    gap: 6px !important;
+  }
+
+  .header__main.mobile-nav-open .main-menu.main-menu-1 #site-navigation {
+    padding-bottom: 24px !important;
+  }
+
+  .header__main .main-menu.main-menu-1 #site-navigation .mobile-quote-item {
+    margin: 18px 0 20px !important;
+    padding: 0 0 20px !important;
+    border-bottom: 0 !important;
+  }
+
+  .header__main .main-menu.main-menu-1 #site-navigation .mobile-quote-item a {
+    min-height: 56px !important;
+    padding: 16px 22px !important;
+    border-radius: 4px !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    letter-spacing: 0.2px !important;
+  }
+}
