@@ -39,12 +39,38 @@ document.addEventListener('DOMContentLoaded', function () {
     if (/\s/.test(value) || localPart.charAt(0) === '.' || localPart.slice(-1) === '.' || localPart.indexOf('..') !== -1) return false;
     if (!/^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+$/.test(localPart)) return false;
 
-    var blockedTypoDomains = [
-      'gmil.com', 'gmai.com', 'gmial.com', 'gamil.com', 'gmail.co',
-      'hotnail.com', 'hotmai.com', 'outlok.com', 'outlook.co',
-      'yaho.com', 'yhoo.com', 'icloud.co', 'icloud.con'
+    var commonEmailDomains = [
+      'gmail.com', 'googlemail.com', 'outlook.com', 'hotmail.com', 'live.com', 'msn.com',
+      'yahoo.com', 'ymail.com', 'icloud.com', 'me.com', 'mac.com', 'proton.me',
+      'protonmail.com', 'aol.com', 'zoho.com', 'mail.com', 'gmx.com', 'tutanota.com',
+      'tutamail.com', 'fastmail.com', 'hey.com', 'yandex.com', 'qq.com', '163.com'
     ];
-    if (blockedTypoDomains.indexOf(domain) !== -1) return false;
+
+    function editDistance(left, right) {
+      var previous = Array.from({ length: right.length + 1 }, function (_, index) { return index; });
+      for (var row = 1; row <= left.length; row += 1) {
+        var current = [row];
+        for (var column = 1; column <= right.length; column += 1) {
+          var cost = left[row - 1] === right[column - 1] ? 0 : 1;
+          current[column] = Math.min(
+            current[column - 1] + 1,
+            previous[column] + 1,
+            previous[column - 1] + cost
+          );
+        }
+        previous = current;
+      }
+      return previous[right.length];
+    }
+
+    // A common provider must match exactly. A one-character near-match such as
+    // gmil.com or yaho.com is treated as a typo, not as a valid provider.
+    if (commonEmailDomains.indexOf(domain) === -1) {
+      var looksLikeProviderTypo = commonEmailDomains.some(function (knownDomain) {
+        return editDistance(domain, knownDomain) <= 1;
+      });
+      if (looksLikeProviderTypo) return false;
+    }
 
     var labels = domain.split('.');
     if (labels.length < 2 || labels.some(function (label) { return !label; })) return false;
