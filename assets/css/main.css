@@ -11294,3 +11294,81 @@ input.main-search-input::placeholder {
     max-width: calc(100vw - 24px) !important;
   }
 }
+
+
+/* Mobile hero shape: preserve the desktop blue composition on small screens. */
+@media (max-width: 767px) {
+  .slider-area .hero-content {
+    position: relative !important;
+    z-index: 5 !important;
+    overflow: visible !important;
+  }
+
+  .slider-area .hero-bg-shape {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 430px !important;
+    overflow: visible !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .slider-area .hero-s-1,
+  .slider-area .hero-s-2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 0 !important;
+  }
+
+  .slider-area .hero-s-1 {
+    top: -94px !important;
+    left: -64px !important;
+    width: min(430px, 108vw) !important;
+  }
+
+  .slider-area .hero-s-2 {
+    top: -92px !important;
+    left: -34px !important;
+    width: min(405px, 102vw) !important;
+  }
+
+  .slider-area .hero-s-1 img,
+  .slider-area .hero-s-2 img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    opacity: 0.82 !important;
+  }
+
+  .slider-area .hero-content > p,
+  .slider-area .hero-content > h1,
+  .slider-area .hero-content > .hero-content-btn {
+    position: relative !important;
+    z-index: 3 !important;
+  }
+}
+
+
+/* Mobile hero shape refinement: visible, balanced, and text-friendly. */
+@media (max-width: 767px) {
+  .slider-area .hero-s-1 {
+    top: -78px !important;
+    left: -42px !important;
+    width: min(385px, 92vw) !important;
+  }
+
+  .slider-area .hero-s-2 {
+    top: -76px !important;
+    left: -18px !important;
+    width: min(360px, 86vw) !important;
+  }
+
+  .slider-area .hero-s-1 img,
+  .slider-area .hero-s-2 img {
+    opacity: 0.68 !important;
+  }
+}
