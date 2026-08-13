@@ -12369,3 +12369,115 @@ input.main-search-input::placeholder {
     overflow: visible !important;
   }
 }
+
+
+/* Final single-row mobile top bar: support blocks and social icons inline. */
+@media (max-width: 991px) {
+  .header__top.d-none,
+  .header__top.d-none.d-md-block,
+  .header__top {
+    display: block !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    overflow: hidden !important;
+  }
+
+  .header__top > .container,
+  .header__top > .container > .row {
+    height: 64px !important;
+    min-height: 64px !important;
+    padding: 0 6px !important;
+  }
+
+  .header__top .col-lg-9 {
+    top: 0 !important;
+    left: 0 !important;
+    width: 75% !important;
+    max-width: 75% !important;
+    height: 64px !important;
+  }
+
+  .header__top .header-cta,
+  .header__top .header-cta > ul {
+    width: 100% !important;
+    height: 64px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+  }
+
+  .header__top .header-cta > ul > li {
+    width: 33.333% !important;
+    height: 54px !important;
+    padding: 0 3px !important;
+  }
+
+  .header__top .cta__icon {
+    width: 30px !important;
+    min-width: 30px !important;
+    margin-right: 5px !important;
+  }
+
+  .header__top .cta__icon span {
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+  }
+
+  .header__top .cta__icon span i {
+    font-size: 18px !important;
+  }
+
+  .header__top .cta__content p,
+  .header__top .cta__content span,
+  .header__top .cta__content a {
+    font-family: Roboto, sans-serif !important;
+    font-size: 12px !important;
+    line-height: 15px !important;
+    letter-spacing: 0 !important;
+  }
+
+  .header__top .col-lg-3 {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    width: 25% !important;
+    max-width: 25% !important;
+    height: 64px !important;
+    padding: 0 !important;
+  }
+
+  .header__top .grb__social,
+  .header__top .grb__social ul {
+    width: 100% !important;
+    height: 64px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+  }
+
+  .header__top .grb__social ul li {
+    width: 35px !important;
+    height: 35px !important;
+    margin: 0 !important;
+  }
+
+  .header__top .grb__social ul li a {
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 15px !important;
+    line-height: 35px !important;
+  }
+
+  .header__main {
+    height: 78px !important;
+    min-height: 78px !important;
+  }
+
+  .header__main .main-menu.main-menu-1 #site-navigation {
+    top: 142px !important;
+    max-height: calc(100vh - 142px) !important;
+  }
+}
