@@ -1,0 +1,90 @@
+
+/* Chat widget styles */
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    align-items: center;
+}
+
+
+
+.user-message {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+/* Quotation Form styles */
+.quote-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    display: none; /* Initially hidden */
+
+}
+.quote-popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+.popup {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background: white;
+   border: 1px solid #ccc;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   padding: 20px;
+   z-index: 1000;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.popup-content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.popup button {
+   margin-top: 10px;
+   padding: 5px 10px;
+}
+
+#loadingSpinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+.grb-btn{
+    cursor: pointer;
+}
