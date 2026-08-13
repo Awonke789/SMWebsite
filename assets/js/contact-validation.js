@@ -70,8 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
       response.textContent = 'Please correct the highlighted fields before sending your message.';
       response.className = 'ajax-response error';
       response.hidden = false;
-      var firstInvalid = form.querySelector('[aria-invalid="true"]');
-      if (firstInvalid) firstInvalid.focus();
     } else {
       response.textContent = '';
       response.hidden = true;
