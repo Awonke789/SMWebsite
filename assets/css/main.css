@@ -12143,3 +12143,229 @@ input.main-search-input::placeholder {
     max-width: 104px !important;
   }
 }
+
+
+/* Mobile top bar: exact desktop support icon boxes and social icons. */
+@media (max-width: 991px) {
+  .header__top {
+    height: 94px !important;
+    min-height: 94px !important;
+  }
+
+  .header__top > .container,
+  .header__top > .container > .row {
+    height: 94px !important;
+    min-height: 94px !important;
+    position: relative !important;
+  }
+
+  .header__top .col-lg-9 {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 54px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .header__top .header-cta {
+    height: 54px !important;
+  }
+
+  .header__top .header-cta > ul {
+    height: 54px !important;
+    align-items: center !important;
+  }
+
+  .header__top .header-cta > ul > li {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 33.333% !important;
+    min-width: 0 !important;
+    height: 54px !important;
+    padding: 0 7px !important;
+  }
+
+  .header__top .header-cta > ul > li:before {
+    display: block !important;
+    top: 12px !important;
+    right: 0 !important;
+    width: 1px !important;
+    height: 30px !important;
+    background: #f2f2f2 !important;
+  }
+
+  .header__top .cta__icon {
+    float: left !important;
+    display: block !important;
+    width: 30px !important;
+    min-width: 30px !important;
+    height: 30px !important;
+    margin: 0 8px 0 0 !important;
+  }
+
+  .header__top .cta__icon span {
+    display: inline-block !important;
+    width: 30px !important;
+    height: 30px !important;
+    margin-top: 0 !important;
+    background: #f2eeff !important;
+    border-radius: 3px !important;
+    line-height: 30px !important;
+    text-align: center !important;
+  }
+
+  .header__top .cta__icon span i {
+    color: #0c9ed0 !important;
+    font-size: 18px !important;
+  }
+
+  .header__top .cta__content {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .header__top .cta__content p,
+  .header__top .cta__content span,
+  .header__top .cta__content a {
+    display: block !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    color: #040021 !important;
+    font-size: 10px !important;
+    line-height: 15px !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .header__top .cta__content span {
+    font-weight: 700 !important;
+  }
+
+  .header__top .col-lg-3 {
+    position: absolute !important;
+    right: 8px !important;
+    bottom: 0 !important;
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    height: 40px !important;
+    padding: 2px 0 3px !important;
+  }
+
+  .header__top .grb__social {
+    display: block !important;
+    float: none !important;
+    height: 35px !important;
+  }
+
+  .header__top .grb__social ul {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    height: 35px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .header__top .grb__social ul li {
+    display: inline-block !important;
+    width: 35px !important;
+    height: 35px !important;
+    margin: 0 3px !important;
+  }
+
+  .header__top .grb__social ul li a {
+    display: inline-block !important;
+    width: 35px !important;
+    height: 35px !important;
+    color: #0c9ed0 !important;
+    background: #ffffff !important;
+    border-radius: 50% !important;
+    box-shadow: 0 7px 20px 0 rgba(22, 35, 145, 0.1) !important;
+    font-size: 15px !important;
+    line-height: 35px !important;
+    text-align: center !important;
+  }
+
+  .header__top .grb__social ul li a.fb { color: #0c9ed0 !important; }
+  .header__top .grb__social ul li a.twt { color: #01b6e5 !important; }
+  .header__top .grb__social ul li a.insta { color: #d90b51 !important; }
+
+  .header__main .main-menu.main-menu-1 #site-navigation {
+    top: 172px !important;
+    max-height: calc(100vh - 172px) !important;
+  }
+}
+
+
+/* Ensure the complete mobile top bar flows before the main header. */
+@media (max-width: 991px) {
+  header {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .header__top {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 94px !important;
+    min-height: 94px !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+  }
+
+  .header__top > .container,
+  .header__top > .container > .row {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 94px !important;
+    min-height: 94px !important;
+    overflow: visible !important;
+  }
+
+  .header__top .col-lg-3 {
+    display: block !important;
+    position: absolute !important;
+    right: 10px !important;
+    bottom: 3px !important;
+    width: 120px !important;
+    max-width: 120px !important;
+    height: 35px !important;
+  }
+
+  .header__top .grb__social ul {
+    justify-content: flex-end !important;
+    width: 120px !important;
+  }
+
+  .header__main {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: 78px !important;
+    min-height: 78px !important;
+    margin: 0 !important;
+  }
+
+  .header__main .main-menu.main-menu-1 #site-navigation {
+    top: 172px !important;
+  }
+}
+
+
+/* Higher-specificity override for the legacy d-none top-bar class. */
+@media (max-width: 991px) {
+  .header__top.d-none,
+  .header__top.d-none.d-md-block {
+    display: block !important;
+    height: 94px !important;
+    min-height: 94px !important;
+    overflow: visible !important;
+  }
+}
