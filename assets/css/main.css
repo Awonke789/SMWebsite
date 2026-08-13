@@ -3081,11 +3081,12 @@ select {
 }
 
 .mean-container .mean-nav > ul {
-  display: block !important;
+  display: none;
 }
 
 .mean-container a.meanmenu-reveal {
-  display: none !important;
+  display: block !important;
+  z-index: 100;
 }
 
 .mean-container .mean-nav ul li a {
@@ -10838,3 +10839,21 @@ input.main-search-input::placeholder {
     background-color: #f8fbff !important;
 }
 
+
+
+/* Mobile navigation fix: keep MeanMenu collapsed until the user opens it. */
+@media (max-width: 991px) {
+  .mean-container .mean-nav > ul {
+    display: none;
+  }
+
+  .mean-container a.meanmenu-reveal {
+    display: block !important;
+    z-index: 100;
+  }
+
+  .mean-container .mean-nav {
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+  }
+}
