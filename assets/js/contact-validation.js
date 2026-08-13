@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!form) return;
 
   var response = form.querySelector('.ajax-response');
+  var submitButton = form.querySelector('button[type="submit"]');
   var fields = {
     name: form.querySelector('[name="name"]'),
     email: form.querySelector('[name="email"]'),
@@ -39,8 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    if (fields.email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.value.trim())) {
-      setError(fields.email, 'Please enter a valid email address.');
+    var emailValue = fields.email.value.trim();
+    var emailPattern = /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/;
+    var hasConsecutiveDots = emailValue.indexOf('..') !== -1;
+    if (emailValue && (!emailPattern.test(emailValue) || hasConsecutiveDots)) {
+      setError(fields.email, 'Please enter a valid email address with a valid domain, for example name@company.co.za.');
       valid = false;
     }
 
@@ -57,6 +61,12 @@ document.addEventListener('DOMContentLoaded', function () {
     return valid;
   }
 
+  function setResponse(message, type) {
+    response.textContent = message;
+    response.className = 'ajax-response ' + type;
+    response.hidden = false;
+  }
+
   Object.keys(fields).forEach(function (key) {
     fields[key].addEventListener('input', function () {
       clearError(fields[key]);
@@ -65,6 +75,33 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   form.addEventListener('submit', function (event) {
-    if (!validate()) event.preventDefault();
+    event.preventDefault();
+    if (!validate()) return;
+
+    var originalText = submitButton.innerHTML;
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    setResponse('Sending your message...', 'sending');
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    })
+      .then(function (result) {
+        if (!result.ok) throw new Error('Request failed');
+        return result.json().catch(function () { return {}; });
+      })
+      .then(function () {
+        form.reset();
+        setResponse('Thank you. Your message has been sent successfully.', 'success');
+      })
+      .catch(function () {
+        setResponse('We could not send your message right now. Please email admin@smsolutionspe.co.za directly.', 'error');
+      })
+      .finally(function () {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalText;
+      });
   });
 });
