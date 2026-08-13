@@ -12602,3 +12602,13 @@ input.main-search-input::placeholder {
     -webkit-text-fill-color: #040021 !important;
   }
 }
+
+
+/* Add breathing room between the mobile header and the hero image. */
+@media (max-width: 991px) {
+  .header__main {
+    margin-bottom: 12px !important;
+    position: relative !important;
+    z-index: 20 !important;
+  }
+}
