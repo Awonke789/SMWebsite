@@ -584,11 +584,28 @@
 
       <!-- Video -->
       <div class="col-lg-7 mb-30">
-    <div class="spotlight-video">
-        <video id="spotlightVideo" controls preload="auto" playsinline>
+    <div class="spotlight-video media-video-shell">
+        <video id="spotlightVideo" controls preload="metadata" playsinline>
     <source src="assets/video/SisandaInterviewVideo_FirstFrame.mp4" type="video/mp4">
     Your browser does not support the video tag.
         </video>
+        <button class="media-video-opening" type="button" aria-label="Play Sisanda Mbodlela interview">
+          <img src="assets/img/video-thumbs/media-opening.jpg" alt="Sisanda Mbodlela speaking at a media interview" />
+          <span class="media-video-play"><i class="fas fa-play"></i></span>
+        </button>
+        <script>
+          (function () {
+            var shell = document.querySelector(".media-video-shell");
+            var video = document.getElementById("spotlightVideo");
+            var opening = document.querySelector(".media-video-opening");
+            if (!shell || !video || !opening) return;
+            opening.addEventListener("click", function () {
+              shell.classList.add("is-playing");
+              video.controls = true;
+              video.play().catch(function () {});
+            });
+          })();
+        </script>
         </div>
       </div>
 
