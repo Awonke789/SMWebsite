@@ -1,11 +1,7 @@
 (function ($) {
 	("use strict");
 
-	// meanmenu
-	$("#mobile-menu").meanmenu({
-		meanMenuContainer: ".mobile-menu",
-		meanScreenWidth: "992",
-	});
+	// Mobile navigation is handled by the responsive CSS in main.css.
 
 	$(".side-info-close,.offcanvas-overlay").on("click", function () {
 		$(".side-info").removeClass("info-open");
