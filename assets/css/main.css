@@ -11847,3 +11847,177 @@ input.main-search-input::placeholder {
     overflow: visible !important;
   }
 }
+
+
+/* Mobile header refinement: support bar + white logo header + hamburger. */
+@media (max-width: 991px) {
+  .header__top.d-none,
+  .header__top {
+    display: block !important;
+    width: 100% !important;
+    height: 54px !important;
+    min-height: 54px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e9ee !important;
+  }
+
+  .header__top > .container,
+  .header__top > .container > .row {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 54px !important;
+    margin: 0 !important;
+    padding: 0 8px !important;
+  }
+
+  .header__top > .container > .row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .header__top .col-lg-9 {
+    display: block !important;
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .header__top .header-cta,
+  .header__top .header-cta > ul {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 4px !important;
+  }
+
+  .header__top .header-cta > ul > li {
+    display: flex !important;
+    align-items: center !important;
+    width: 33.333% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 2px !important;
+  }
+
+  .header__top .cta__icon {
+    display: none !important;
+  }
+
+  .header__top .cta__content {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    text-align: center !important;
+  }
+
+  .header__top .cta__content p,
+  .header__top .cta__content span,
+  .header__top .cta__content a {
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    color: #18263c !important;
+    font-size: 8px !important;
+    line-height: 12px !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .header__main {
+    height: 78px !important;
+    min-height: 78px !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e9ee !important;
+  }
+
+  .header__main > .container,
+  .header__main > .container > .row {
+    height: 78px !important;
+    min-height: 78px !important;
+    padding: 0 12px !important;
+  }
+
+  .header__main .logo-bg-1 {
+    display: block !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: -8px !important;
+    width: 150px !important;
+    height: 78px !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+  }
+
+  .header__main .logo-bg-1 img {
+    display: block !important;
+    width: 150px !important;
+    height: 78px !important;
+    object-fit: cover !important;
+  }
+
+  .header__main .logo-text-black {
+    position: relative !important;
+    z-index: 1 !important;
+    display: block !important;
+  }
+
+  .header__main .logo-text-black img {
+    width: auto !important;
+    max-width: 90px !important;
+    height: auto !important;
+  }
+
+  .header__main .menu-bg-1 {
+    display: none !important;
+  }
+
+  .header__main > .container > .row > .col-xl-2 {
+    top: 0 !important;
+    left: 0 !important;
+    width: 58% !important;
+    max-width: 58% !important;
+    height: 78px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .header__main > .container > .row > .col-xl-10 {
+    top: 0 !important;
+    right: 0 !important;
+    width: 42% !important;
+    max-width: 42% !important;
+    height: 78px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  .header__main .header__menu-area {
+    height: 78px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  .header__main .mobile-nav-toggle {
+    width: 58px !important;
+    height: 52px !important;
+    margin-right: 0 !important;
+    background: #109fca !important;
+    border-radius: 4px !important;
+  }
+
+  .header__main .main-menu.main-menu-1 #site-navigation {
+    top: 132px !important;
+    max-height: calc(100vh - 132px) !important;
+  }
+}
