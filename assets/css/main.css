@@ -12542,3 +12542,22 @@ input.main-search-input::placeholder {
     gap: 5px !important;
   }
 }
+
+
+/* White Get A Quote text and arrow in the mobile menu. */
+@media (max-width: 991px) {
+  .header__main .main-menu.main-menu-1 #site-navigation .mobile-quote-item a,
+  .header__main .main-menu.main-menu-1 #site-navigation .mobile-quote-item a i {
+    color: #ffffff !important;
+  }
+}
+
+
+@media (max-width: 991px) {
+  #site-navigation .mobile-quote-item a,
+  #site-navigation .mobile-quote-item a i,
+  #site-navigation .mobile-quote-item a * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
