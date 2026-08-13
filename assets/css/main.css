@@ -12527,3 +12527,18 @@ input.main-search-input::placeholder {
     line-height: 30px !important;
   }
 }
+
+
+/* Slightly smaller mobile hamburger control. */
+@media (max-width: 991px) {
+  .header__main .mobile-nav-toggle {
+    width: 64px !important;
+    height: 50px !important;
+  }
+
+  .header__main .mobile-nav-toggle span {
+    width: 29px !important;
+    height: 3px !important;
+    gap: 5px !important;
+  }
+}
