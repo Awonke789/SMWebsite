@@ -39,6 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (/\s/.test(value) || localPart.charAt(0) === '.' || localPart.slice(-1) === '.' || localPart.indexOf('..') !== -1) return false;
     if (!/^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+$/.test(localPart)) return false;
 
+    var blockedTypoDomains = [
+      'gmil.com', 'gmai.com', 'gmial.com', 'gamil.com', 'gmail.co',
+      'hotnail.com', 'hotmai.com', 'outlok.com', 'outlook.co',
+      'yaho.com', 'yhoo.com', 'icloud.co', 'icloud.con'
+    ];
+    if (blockedTypoDomains.indexOf(domain) !== -1) return false;
+
     var labels = domain.split('.');
     if (labels.length < 2 || labels.some(function (label) { return !label; })) return false;
     if (labels.some(function (label) {
@@ -62,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var emailValue = fields.email.value.trim();
     if (emailValue && !isValidEmailAddress(emailValue)) {
-      setError(fields.email, 'Please enter a valid email address with a valid domain, for example name@company.co.za.');
+      setError(fields.email, 'Please enter a valid email address. Check the spelling of the domain, for example name@gmail.com.');
       valid = false;
     }
 
