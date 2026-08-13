@@ -11260,3 +11260,37 @@ input.main-search-input::placeholder {
     background: #eefaff !important;
   }
 }
+
+
+/* Final mobile cleanup: no clipped link backgrounds and dropdown below the CTA. */
+@media (max-width: 991px) {
+  .header__main #site-navigation,
+  .header__main #site-navigation > ul,
+  .header__main #site-navigation > ul > li,
+  .header__main #site-navigation > ul > li > a {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .header__main #site-navigation > ul > li > a:hover,
+  .header__main #site-navigation > ul > li > a:focus,
+  .header__main #site-navigation > ul > li > a:active,
+  .header__main #site-navigation > ul > li > a[aria-expanded="true"] {
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .header__main #site-navigation > ul > li > a {
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  .header__main #site-navigation > ul > li.nav-item.dropdown > .dropdown-menu,
+  .header__main #site-navigation > ul > li.nav-item.dropdown > .dropdown-menu.show {
+    top: 118px !important;
+    left: 0 !important;
+    min-width: 190px !important;
+    max-width: calc(100vw - 24px) !important;
+  }
+}
